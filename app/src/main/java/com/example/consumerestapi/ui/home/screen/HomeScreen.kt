@@ -35,7 +35,10 @@ import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
 
 @Composable
 fun HomeStatus(
-    kontakUIState: KontakUIState, retryAction: () -> Unit, modifier: Modifier = Modifier
+    kontakUIState: KontakUIState,
+    retryAction: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDeleteClick: (Kontak) -> Unit
 ){
     when (kontakUIState){
         is KontakUIState.Loading -> OnLoading(modifier = modifier.fillMaxSize())
