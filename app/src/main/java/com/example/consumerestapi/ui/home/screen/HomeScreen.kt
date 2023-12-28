@@ -38,10 +38,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumerestapi.R
 import com.example.consumerestapi.model.Kontak
+import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.home.PenyediaViewModel
 import com.example.consumerestapi.ui.home.TopAppBarKontak
 import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
+
+object DestinasiHome : DestinasiNavigasi{
+    override val route = "home"
+    override val titleRes = "Kontak"
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
