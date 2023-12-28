@@ -39,6 +39,7 @@ fun HomeStatus(
     retryAction: () -> Unit,
     modifier: Modifier = Modifier,
     onDeleteClick: (Kontak) -> Unit,
+    onDetailClick: (Int) -> Unit
 
 ){
     when (kontakUIState){
@@ -46,7 +47,7 @@ fun HomeStatus(
         is KontakUIState.Success -> KontakLayout(
             kontak = kontakUIState.kontak,
             modifier = modifier.fillMaxWidth(),
-            onDeleteClick ={onDeleteClick(it)}
+            onDeleteClick ={onDeleteClick(it)},
         )
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
     }
