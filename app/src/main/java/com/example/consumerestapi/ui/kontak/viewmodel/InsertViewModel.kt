@@ -13,7 +13,7 @@ import java.lang.Exception
 class InsertViewModel(private val kontakRepository: KontakRepository) : ViewModel(){
     var insertKontakState by mutableStateOf(InsertUiState())
 
-    fun updateInsertKontakState(insertUiEvent: InsertUievent){
+    fun updateInsertKontakState(insertUiEvent: InsertUiEvent){
         insertKontakState = InsertUiState(insertUiEvent = insertUiEvent)
     }
 
