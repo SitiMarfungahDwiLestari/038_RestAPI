@@ -1,2 +1,28 @@
 package com.example.consumerestapi.ui.kontak.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.consumerestapi.repository.KontakRepository
+import kotlinx.coroutines.launch
+import java.lang.Exception
+
+class InsertViewModel(private val kontakRepository: KontakRepository) : ViewModel(){
+    var insertKontakState by mutableStateOf(InsertUiState())
+
+    fun updateInsertKontakState(insertUiEvent: InsertUievent){
+        insertKontakState = InsertUiState(insertUiEvent = insertUiEvent)
+    }
+
+    suspend fun insertKontak(){
+        viewModelScope.launch {
+            try {
+                kontakRepository.insertKontak(insertKontakState.insertUiEvent.toKontak())
+            } catch (e: Exception){
+                e.printStackTrace()
+            }
+        }
+    }
+}
