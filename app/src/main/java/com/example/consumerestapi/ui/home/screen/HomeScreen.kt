@@ -48,6 +48,7 @@ fun HomeStatus(
             kontak = kontakUIState.kontak,
             modifier = modifier.fillMaxWidth(),
             onDeleteClick ={onDeleteClick(it)},
+            onDetailClick = {onDetailClick}
         )
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
     }
