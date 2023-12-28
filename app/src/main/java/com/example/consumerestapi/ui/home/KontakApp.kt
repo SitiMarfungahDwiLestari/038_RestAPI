@@ -32,7 +32,8 @@ fun KontakApp(
     Scaffold (
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            TopAppBarKontak(scrollBehavior = scrollBehavior) }
+            TopAppBarKontak(
+                scrollBehavior = scrollBehavior) }
     ){
         Surface (
             modifier = Modifier
