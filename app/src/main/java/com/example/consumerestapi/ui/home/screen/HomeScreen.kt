@@ -75,14 +75,17 @@ fun OnLoading(modifier: Modifier = Modifier){
 @Composable
 fun KontakLayout(
     kontak : List<Kontak>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onDeleteClick: (Kontak) -> Unit = {}
 ){
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)){
         items(kontak){kontak ->
-            KontakCard(kontak = kontak, modifier = Modifier.fillMaxWidth())
+            KontakCard(kontak = kontak, modifier = Modifier.fillMaxWidth(),
+
+
         }
     }
 }
