@@ -43,11 +43,13 @@ fun EntryKontakScreen(
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = TopAppBarKontak(
-            title = DestinasiEntry.titleRes,
-            canNavigateBack = true,
-            scrollBehavior = scrollBehavior,
-            navigateUp = navigateBack)
+        topBar = {
+            TopAppBarKontak(
+                title = DestinasiEntry.titleRes,
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior,
+                navigateUp = navigateBack)
+        }
     ) {
         innerPadding ->
         EntryKontakBody(
@@ -69,6 +71,7 @@ fun EntryKontakScreen(
 
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormInputSiswa(
     insertUiEvent: InsertUiEvent,
@@ -80,12 +83,10 @@ fun FormInputSiswa(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ){
-
-
         OutlinedTextField(
             value = insertUiEvent.nama,
             onValueChange = {onValueChange(insertUiEvent.copy(nama = it))},
-            Label = {Text("Nama")},
+            label =  { Text(text = "Nama")},
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
@@ -93,7 +94,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = insertUiEvent.email,
             onValueChange = {onValueChange(insertUiEvent.copy(email = it))},
-            Label = {Text("Email")},
+            label = { Text("Email")},
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
@@ -101,7 +102,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = insertUiEvent.nohp,
             onValueChange = {onValueChange(insertUiEvent.copy(nohp = it))},
-            Label = {Text("No HP")},
+            label = {Text("No HP")},
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true

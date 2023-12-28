@@ -2,8 +2,10 @@ package com.example.consumerestapi.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.consumerestapi.ui.kontak.screen.DestinasiEntry
 import com.example.consumerestapi.ui.kontak.screen.DestinasiHome
 import com.example.consumerestapi.ui.kontak.screen.EntryKontakScreen
@@ -25,9 +27,9 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         }
         composable(DestinasiEntry.route){
             EntryKontakScreen(navigateBack = { navController.navigate(DestinasiHome.route){
-                popUpTo((DestinasiHome.route){
+                popUpTo(DestinasiHome.route){
                     inclusive = true
-                })
+                }
             } })
         }
     }
