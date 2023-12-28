@@ -6,7 +6,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.consumerestapi.KontakApplication
-import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
+import com.example.consumerestapi.ui.kontak.viewmodel.HomeViewModel
 
 object PenyediaViewModel{
     val Factory = viewModelFactory {

@@ -1,4 +1,4 @@
-package com.example.consumerestapi.ui.home.screen
+package com.example.consumerestapi.ui.kontak.screen
 
 import android.text.Spannable.Factory
 import androidx.compose.foundation.Image
@@ -41,8 +41,8 @@ import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.home.PenyediaViewModel
 import com.example.consumerestapi.ui.home.TopAppBarKontak
-import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
-import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
+import com.example.consumerestapi.ui.kontak.viewmodel.HomeViewModel
+import com.example.consumerestapi.ui.kontak.viewmodel.KontakUIState
 
 object DestinasiHome : DestinasiNavigasi{
     override val route = "home"

@@ -1,4 +1,4 @@
-package com.example.consumerestapi.ui.home.viewmodel
+package com.example.consumerestapi.ui.kontak.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -43,7 +43,7 @@ class HomeViewModel (private val kontakRepository: KontakRepository) : ViewModel
             try{
                 kontakRepository.deleteKontak(id)
             } catch ((e: IOException){
-                KontakUIState.Error
+            KontakUIState.Error
         } catch(e: HttpException){
             KontakUIState.Error
         }
