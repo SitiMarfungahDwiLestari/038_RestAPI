@@ -34,8 +34,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import com.example.consumerestapi.R
 import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.navigation.DestinasiNavigasi
@@ -43,6 +45,7 @@ import com.example.consumerestapi.ui.home.PenyediaViewModel
 import com.example.consumerestapi.ui.home.TopAppBarKontak
 import com.example.consumerestapi.ui.kontak.viewmodel.HomeViewModel
 import com.example.consumerestapi.ui.kontak.viewmodel.KontakUIState
+import com.example.consumerestapi.ui.theme.ConsumeRestAPITheme
 
 object DestinasiHome : DestinasiNavigasi{
     override val route = "home"
@@ -196,5 +199,13 @@ fun KontakCard(
                 )
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewHome() {
+    ConsumeRestAPITheme {
+        HomeScreen(navigateToItemEntry = {  })
     }
 }

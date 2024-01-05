@@ -49,7 +49,7 @@ fun KontakApp(
 fun TopAppBarKontak(
     title: String,
     canNavigateBack: Boolean,
-    scrollBehavior: TopAppBarScrollBehavior,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
     modifier: Modifier = Modifier,
     navigateUp: () -> Unit = {}
 ){
